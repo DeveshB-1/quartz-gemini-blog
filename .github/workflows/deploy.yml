@@ -1,4 +1,4 @@
-name: Deploy Quartz Blog
+kname: Deploy Quartz Blog
 
 on:
   push:
@@ -22,10 +22,10 @@ jobs:
         run: npm ci
 
       - name: Build Quartz
-        run: npx quartz build
-
-      - name: Add .nojekyll
-        run: touch _site/.nojekyll
+        run: |
+          npx quartz build
+          mkdir -p _site
+          touch _site/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
