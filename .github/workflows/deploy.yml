@@ -1,4 +1,4 @@
-kname: Deploy Quartz Blog
+name: Deploy Quartz Blog
 
 on:
   push:
@@ -32,4 +32,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-
